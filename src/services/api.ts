@@ -1,7 +1,7 @@
 import { DownloadHistory } from "../types";
 import { ContentInfo, DownloadRequest, DownloadResponse, PlatformFormats } from "../types/api";
 
-const API_BASE_URL = 'http://localhost:5050';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export async function startDownload(request: DownloadRequest): Promise<DownloadResponse> {
   const response = await fetch(`${API_BASE_URL}/download`, {
